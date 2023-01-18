@@ -5,12 +5,14 @@ class Client{
     // attribute
     private $nom;
     private $prenom;
+    private array $reservations;
 
-    //contruct methode
+    // contruct methode
     public function __construct($nom, $prenom)
     {
         $this->nom= $nom;
         $this->prenom= $prenom;
+        $this->reservations= [];
     }
 
     // setter functions
@@ -28,6 +30,19 @@ class Client{
     public function get_prenom(){
         return $this->prenom;
     }
+
+    // mettre $reservation dans un tableau
+    public function addReservations(Reservation $reservation){
+        $this->reservations[] = $reservation;
+        var_dump($reservation);
+    }
+   // afficher les clients de les resevation a l'aide d'un forEach
+    public function afficherReservations(){
+        foreach($this->reservations as $reservation){
+            echo $reservation;
+        }
+    }
+
 
     // tostring function
     public function __toString()

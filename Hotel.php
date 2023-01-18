@@ -7,6 +7,7 @@ class Hotel{
     private $ville_hotel;
     private $adresse;
     private $code_postal;
+    private array $chambres; 
 
     //contruct methode
     public function __construct($nom_hotel, $ville_hotel, $adresse, $code_postal)
@@ -15,6 +16,7 @@ class Hotel{
         $this->ville_hotel= $ville_hotel;
         $this->adresse= $adresse;
         $this->code_postal= $code_postal;
+        $this->chambres= [];
     }
 
     // setter functions
@@ -45,6 +47,19 @@ class Hotel{
         return $this->code_postal;
     }
 
+
+    //mettre $hotel dans un tableau
+    public function addChambres(Chambre $hotel){
+         $this->chambres[] = $hotel;
+    }
+    //afficher les chambres de l'hotel a l'aide d'un forEach
+    public function afficherChambres(){
+        foreach($this->chambres as $hotel){
+            echo $hotel;
+        }
+    }
+
+
     // tostring function
     public function __toString()
     {
@@ -53,3 +68,4 @@ class Hotel{
     }
 
 }
+

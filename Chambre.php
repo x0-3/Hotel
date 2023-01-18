@@ -7,14 +7,20 @@ class Chambre{
     private $prix_chambre;
     private $wifi;
     private $etat_chambre;
+    private $hotel;
+    private array $reservations;
 
     //contruct methode
-    public function __construct($numero_chambre, $prix_chambre, $wifi, $etat_chambre)
+    public function __construct($numero_chambre, $prix_chambre, $wifi, $etat_chambre, Hotel $hotel)
     {
         $this->numero_chambre= $numero_chambre;
         $this->prix_chambre= $prix_chambre;
         $this->wifi= $wifi;
         $this->etat_chambre= $etat_chambre;
+        $this->hotel = $hotel;
+        $hotel->addChambres($this);
+        $this->reservations = [];
+       
     }
 
     // setter functions
@@ -44,6 +50,20 @@ class Chambre{
     }
     public function get_etat_chambre(){
         return $this->etat_chambre;
+    }
+
+
+    
+    //mettre $reservation dans un tableau
+    public function addReservations(Reservation $reservation){
+        $this->reservations[] = $reservation;
+    }
+   //afficher les chambres de les resevation a l'aide d'un forEach
+    public function afficherReservations(){
+       foreach($this->reservations as $reservation){
+           echo $reservation;
+           
+        }
     }
 
 

@@ -16,7 +16,9 @@ class Reservation{
         $this->date_fin_reservation= $date_fin_reservation;
         $this->hotel= $hotel;
         $this->chambre= $chambre;
+        $chambre->addReservations($this);
         $this->client= $client;
+        $client->addReservations($this);
     }
 
     // setter function
@@ -26,7 +28,16 @@ class Reservation{
     public function set_date_fin_reservation(){
        $this->date_fin_reservation;
     }
-
+    public function set_hotel(){
+       $this->hotel;
+    }
+    public function set_chambre(){
+       $this->chambre;
+    }
+    public function set_client(){
+       $this->client;
+    }
+    
     // getter function
     public function get_date_debut(){
        return $this->date_debut_reservation;
@@ -34,6 +45,25 @@ class Reservation{
     public function get_date_fin_reservation(){
         return $this->date_fin_reservation;
     }
+    public function get_hotel(){
+        return $this->hotel;
+    }
+    public function get_chambre(){
+        return $this->chambre;
+    }
+    public function get_client(){
+        return $this->client;
+    }
+
+    // toString function
+    public function __toString()
+    {
+        return "{$this->hotel}{$this->chambre}{$this->client} du {$this->date_debut_reservation} 
+        au {$this->date_fin_reservation}";
+    }
+
+}
+
 
 
     // function 0 reservation 
@@ -52,17 +82,6 @@ class Reservation{
     // si (chambre_reserver != 0) alors
     //      nombre_chambre <- nombre_chambres - chambre_reserver 
     // fin si
-    
+
     // ecrire chambre_reserver
     // ecrire nombre_chambre 
-
-
-
-    // toString function
-    public function __toString()
-    {
-        return "{$this->hotel}{$this->chambre}{$this->client} du {$this->date_debut_reservation} 
-        au {$this->date_fin_reservation}";
-    }
-
-}
