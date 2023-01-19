@@ -54,15 +54,14 @@ class Chambre{
 
 
     
-    //mettre $reservation dans un tableau
+    //add $resevation in an array
     public function addReservations(Reservation $reservation){
         $this->reservations[] = $reservation;
     }
-   //afficher les chambres de les resevation a l'aide d'un forEach
+    // show the rooms reservation with a forEach
     public function afficherReservations(){
        foreach($this->reservations as $reservation){
            echo $reservation;
-           
         }
     }
 
@@ -70,9 +69,9 @@ class Chambre{
     // tostring function
     public function __toString()
     {
-        return " </br> numéro de la chambre : {$this->numero_chambre} 
-        </br> prix de la chambre : {$this->prix_chambre} </br> wifi : {$this->wifi} 
-        </br> état de la chambre : {$this->etat_chambre} </br> ";
+        return "Chambre : {$this->numero_chambre} -
+     prix de la chambre : {$this->prix_chambre} - wifi : {$this->wifi} -
+     état de la chambre : {$this->etat_chambre} ";
     }
 
 }

@@ -31,23 +31,26 @@ class Client{
         return $this->prenom;
     }
 
-    // mettre $reservation dans un tableau
+    //add $resevation in an array
     public function addReservations(Reservation $reservation){
         $this->reservations[] = $reservation;
-        var_dump($reservation);
     }
-   // afficher les clients de les resevation a l'aide d'un forEach
+    // show the client reservation with a forEach
     public function afficherReservations(){
         foreach($this->reservations as $reservation){
-            echo $reservation;
+            echo $reservation."</br>";
         }
+        echo "le client". $this."a fait : ". count($this-> reservations ). " réservation"; //use this in class Hotel function nombre_reservation
+        
     }
+
+    // function to calculate the total price for a reservation!!!!!!
 
 
     // tostring function
     public function __toString()
     {
-        return "</br> Nom : {$this->nom} </br> prénom : {$this->prenom} </br>";
+        return "{$this->nom} {$this->prenom}";
     }
 
 }

@@ -55,10 +55,11 @@ class Reservation{
         return $this->client;
     }
 
+
     // toString function
     public function __toString()
     {
-        return "{$this->hotel}{$this->chambre}{$this->client} du {$this->date_debut_reservation} 
+        return "{$this->hotel}</br>{$this->client} - {$this->chambre} - du {$this->date_debut_reservation} 
         au {$this->date_fin_reservation}";
     }
 
@@ -66,22 +67,4 @@ class Reservation{
 
 
 
-    // function 0 reservation 
-
-    // si (client <- 0) alors
-    //      ecrire "Aucune réservations !"
-    // fin si
-
-
-
-    // function number of room in Hotel
-
-    // nombre_chambre <- 30
-    // chambre_reserver <- 3
-
-    // si (chambre_reserver != 0) alors
-    //      nombre_chambre <- nombre_chambres - chambre_reserver 
-    // fin si
-
-    // ecrire chambre_reserver
-    // ecrire nombre_chambre 
+    
