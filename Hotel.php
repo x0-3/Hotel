@@ -57,38 +57,45 @@ class Hotel{
 
     // show the hotel rooms with a forEach
     public function afficherChambres(){
+        $total= 0;
         foreach($this->chambres as $hotel){
             echo $hotel;
+            
+            foreach($this->reservations as $reservation){
+                $total +=$hotel->get_prix_chambre();
+            }
+            echo "Le prix total est de : " .$total. " €<br>";
         }
     }
 
-    // FIXME:
+    // FIXME: calculate number of rooms
     // function number of room in Hotel
     public function nombre_reservation(){
 
-        count($this->reservations);
+        count($this->chambres);
 
-        if (count($this->reservations) != 0){
-            echo "Nombre de chambres : " ."</br>";
-            echo "Nombre de chambres réservées : "."</br>";
-            echo "Nombre de chambres dispo : "."</br>";
+        if (count($this->chambres) != 0){
+            echo "Nombre de chambres : "."</br>";
+            echo "Nombre de chambres réservées : ".count($this->chambres)."</br>";
+            // nombreChambreDispo <- count($this->chambres) - nombreChambre
+            echo "Nombre de chambres dispo : "."</br>"; 
         }else{
-            echo " Aucune réservation";
+            echo " Aucune réservation ";
         }
     
     }
 
     
     // FIXME:
-    public function PrixTotal(){
-        $total= 0;
+    // public function PrixTotal(){
+    //     $total= 0;
 
-        foreach($this->reservations as $reservation){
-            $total +=$reservation->get_prix_chambre();
-        }
-        echo "Le prix total est de : " .$total. " €<br>";
+    //     foreach($this->reservations as $reservation){
+    //         $total +=$chambres->get_prix_chambre();
+    //     }
+    //     echo "Le prix total est de : " .$total. " €<br>";
         
-    }
+    // }
     
 
     // tostring function

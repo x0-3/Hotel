@@ -25,8 +25,8 @@ $chambres = array($chambre1, $chambre2);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    <link rel="stylesheet" href="css/uikit.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.21/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="css/uikit.min.css" />
 
 </head>
 <body>
@@ -50,12 +50,12 @@ $chambres = array($chambre1, $chambre2);
     // booking of one client
     echo "<h4>Réservation de </h4>",
     $client1 -> afficherReservations() ."</br>";
-    $hotel1 -> PrixTotal();
+    // $hotel1 -> afficherChambres();
 
 
     // status info of the hotel rooms in the hotel Hitlon in a table
     echo "<p> Statuts des chambres de <b>".$hotel1->get_nom_hotel() . " **** " . $hotel1->get_ville_hotel()."</b></p>";
-    echo "<table  class='uk-table uk-table-striped'>",
+    echo "<table  class='uk-table uk-table-middle uk-table-striped'>",
             "<thead>",
                 "<tr>",
                     "<th>CHAMBRES</th>",
@@ -81,6 +81,7 @@ $chambres = array($chambre1, $chambre2);
         
 
    ?>
-</body>
+   <script src="uikit/dist/js/uikit-icons.min.js"></script>
 
+</body>
 </html>
