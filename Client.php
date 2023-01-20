@@ -38,10 +38,9 @@ class Client{
     // show the client reservation with a forEach
     public function afficherReservations(){
         foreach($this->reservations as $reservation){
-            echo $reservation."</br>";
+            echo $reservation . "</br>";
         }
-        echo "le client ". $this." a fait : ". count($this-> reservations ). " réservation"; //use this in class Hotel function nombre_reservation
-        
+        return "<button class='uk-button uk-button-primary'>". count($this-> reservations) . " réservations</button>";
     }    
 
     // tostring function

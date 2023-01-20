@@ -47,23 +47,22 @@ class Chambre{
         return $this->prix_chambre;
     }
     
-    // TODO: add icons 
+    // see if a room has wifi 
     public function get_wifi(){
         if ($this->wifi == true){    
-            // return "<span uk-icon='icon: check; ratio: 2'></span>";
-            return "oui";
+            return  "<i class='fa fa-rss'></i>";
         }else{
-            return "Non";
+            return "no-signal";
         }
         return $this->wifi;
     }
 
-    // TODO: add background color
+    // see if a room is occupied
     public function get_etat_chambre(){
         if ($this->etat_chambre == true){
-            return "<p class='uk-text-danger'>Réserver</p>";
+            return "<button class='uk-button uk-button-danger'>Réserver</button>";
         }else{
-            return "<p class='uk-text-success'> Disponible </p>";
+            return "<button class='uk-button uk-button-primary'>Disponible</button>";
         }
         return $this->etat_chambre;
     }
@@ -85,7 +84,7 @@ class Chambre{
     public function __toString()
     {
         return "Chambre : {$this->numero_chambre} -
-     prix de la chambre : {$this->prix_chambre} - wifi : {$this->wifi} -
+     prix de la chambre : {$this->prix_chambre} - wifi : {$this->get_wifi()} -
      état de la chambre : {$this->get_etat_chambre()} ";
     }
 

@@ -59,7 +59,7 @@ class Reservation{
     // toString function
     public function __toString()
     {
-        return "{$this->hotel}</br>{$this->client} - {$this->chambre} - du {$this->date_debut_reservation} 
+        return "{$this->hotel}</br>{$this->client} - {$this->chambre}  du {$this->date_debut_reservation} 
         au {$this->date_fin_reservation}";
     }
 
