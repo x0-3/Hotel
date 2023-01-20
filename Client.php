@@ -37,13 +37,12 @@ class Client{
     }
     // show the client reservation with a forEach
     public function afficherReservations(){
-        $total = 0;
         foreach($this->reservations as $reservation){
             echo $reservation."</br>";
         }
         echo "le client ". $this." a fait : ". count($this-> reservations ). " réservation"; //use this in class Hotel function nombre_reservation
         
-    }
+    }    
 
     // tostring function
     public function __toString()

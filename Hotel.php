@@ -62,39 +62,33 @@ class Hotel{
         }
     }
 
+    // FIXME:
     // function number of room in Hotel
     public function nombre_reservation(){
 
-        // add a count function that is in Client!!!!!
+        count($this->reservations);
 
-        $nombre_chambre = 30;
-        $chambre_reserver = 3;
-
-        echo "Nombres de chambres : ".$nombre_chambre ."</br>";
-        echo "Nombres de chambres réservées : ".$chambre_reserver."</br>";
-
-        if ($chambre_reserver != 0){
-            $nombre_chambre -= $chambre_reserver;
-            echo "Nombres de chambres dispo : " . $nombre_chambre."</br>";
+        if (count($this->reservations) != 0){
+            echo "Nombre de chambres : " ."</br>";
+            echo "Nombre de chambres réservées : "."</br>";
+            echo "Nombre de chambres dispo : "."</br>";
         }else{
-            echo " Aucune réservation !";
+            echo " Aucune réservation";
         }
+    
     }
 
-    // nombre_chambre <- 30
-    // chambre_reserver <- 3
+    
+    // FIXME:
+    public function PrixTotal(){
+        $total= 0;
 
-    // si (chambre_reserver != 0) alors
-    //      nombre_chambre <- nombre_chambres - chambre_reserver 
-    // fin si
-
-    // ecrire chambre_reserver
-    // ecrire nombre_chambre 
-
-    // function 0 reservation 
-    // si (hotel <- 0) alors
-    //      ecrire "Aucune réservations !"
-    // fin si
+        foreach($this->reservations as $reservation){
+            $total +=$reservation->get_prix_chambre();
+        }
+        echo "Le prix total est de : " .$total. " €<br>";
+        
+    }
     
 
     // tostring function

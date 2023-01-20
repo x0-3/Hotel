@@ -12,7 +12,9 @@ $chambre1= new Chambre(1, "135 €", true, true, $hotel1, $client1);
 $reservation1= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
 
 $hotel2= new Hotel("Regent", "Paris", "10 route de la Gare", "Paris");
-$chambre2= new Chambre(1, "135 €", false, false, $hotel1, $client1);
+$chambre2= new Chambre(2, "135 €", false, false, $hotel1, $client1);
+
+$chambres = array($chambre1, $chambre2);
 
 ?>
 
@@ -47,7 +49,8 @@ $chambre2= new Chambre(1, "135 €", false, false, $hotel1, $client1);
 
     // booking of one client
     echo "<h4>Réservation de </h4>",
-    $client1 -> afficherReservations();
+    $client1 -> afficherReservations() ."</br>";
+    $hotel1 -> PrixTotal();
 
 
     // status info of the hotel rooms in the hotel Hitlon in a table
@@ -63,23 +66,18 @@ $chambre2= new Chambre(1, "135 €", false, false, $hotel1, $client1);
             "</thead>",
             "<tbody>";
 
-            // foreach ($this->$chambres as $index => $reservation){ !!!!!! (optional)
-                
-            // } 
-            echo "<tr>",
-                    "<td> Chambre ". $chambre1->get_numero_chambre(). "</td>",
-                    "<td>". $chambre1->get_prix_chambre(). "</td>",
-                    "<td>" . $chambre1->get_wifi()."</td>",
-                    "<td>" . $chambre1->get_etat_chambre()."</td>",
-                "</tr>",
-                "<tr>",
-                    "<td> Chambre ". $chambre2->get_numero_chambre(). "</td>",
-                    "<td>". $chambre2->get_prix_chambre(). "</td>",
-                    "<td>" . $chambre2->get_wifi()."</td>",
-                    "<td>" . $chambre2->get_etat_chambre()."</td>",
-                "</tr>",
-            "</tbody>",
-            "</table>";
+            // auto increment from the array $chambres
+            foreach ($chambres as $chambre){
+                echo "<tr>",
+                        "<td> Chambre ". $chambre->get_numero_chambre(). "</td>",
+                        "<td>". $chambre->get_prix_chambre(). "</td>",
+                        "<td>" . $chambre->get_wifi()."</td>",
+                        "<td>" . $chambre->get_etat_chambre()."</td>",
+                    "</tr>";
+            } 
+
+                "</tbody>";
+                "</table>";
         
 
    ?>
