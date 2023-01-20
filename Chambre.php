@@ -46,14 +46,22 @@ class Chambre{
         return $this->prix_chambre;
     }
     public function get_wifi(){
-        return $this->wifi;
+        if ($this->wifi == true){
+            return "Oui";
+        }else{
+            return "Non";
+        }
+        // return $this->wifi;
     }
     public function get_etat_chambre(){
-        return $this->etat_chambre;
+        if ($this->etat_chambre == true){
+            return "Réserver";
+        }else{
+            return "Disponible";
+        }
+        // return $this->etat_chambre;
     }
-
-
-    
+ 
     //add $resevation in an array
     public function addReservations(Reservation $reservation){
         $this->reservations[] = $reservation;

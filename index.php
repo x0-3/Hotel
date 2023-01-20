@@ -12,6 +12,7 @@ $chambre1= new Chambre(1, "135 €", true, true, $hotel1, $client1);
 $reservation1= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
 
 $hotel2= new Hotel("Regent", "Paris", "10 route de la Gare", "Paris");
+$chambre2= new Chambre(1, "135 €", false, false, $hotel1, $client1);
 
 ?>
 
@@ -70,6 +71,12 @@ $hotel2= new Hotel("Regent", "Paris", "10 route de la Gare", "Paris");
                     "<td>". $chambre1->get_prix_chambre(). "</td>",
                     "<td>" . $chambre1->get_wifi()."</td>",
                     "<td>" . $chambre1->get_etat_chambre()."</td>",
+                "</tr>",
+                "<tr>",
+                    "<td> Chambre ". $chambre2->get_numero_chambre(). "</td>",
+                    "<td>". $chambre2->get_prix_chambre(). "</td>",
+                    "<td>" . $chambre2->get_wifi()."</td>",
+                    "<td>" . $chambre2->get_etat_chambre()."</td>",
                 "</tr>",
             "</tbody>",
             "</table>";
