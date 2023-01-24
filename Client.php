@@ -59,10 +59,9 @@ class Client{
         $total= 0;
 
         foreach($this->reservations as $prix){
-            $total+= $prix->get_chambre();
+            $total= $prix->get_prix_chambre();
         }
         echo "Le total : " .$total. " €<br>";
-        
     }
 
     // tostring function
