@@ -41,7 +41,19 @@ class Client{
             echo $reservation . "</br>";
         }
         return "<button class='uk-button uk-button-primary'>". count($this-> reservations) . " réservations</button>";
+
     }    
+
+
+    // public function prixTotalReservation(){
+    //     $total= 0;
+
+    //     foreach($this->reservations as $prix){
+    //         $total+=$prix->prix_chambre();
+    //     }
+    //     return "Le prix total est de : " .$total. " €<br>";
+        
+    // }
 
     // tostring function
     public function __toString()

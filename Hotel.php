@@ -60,9 +60,8 @@ class Hotel{
        foreach($this->reservations as $reservation){
            echo $reservation;
         }
+
     }
-
-
 
     //add $hotel in an array
     public function addChambres(Chambre $hotel){
@@ -73,7 +72,6 @@ class Hotel{
     public function afficherChambres(){
         foreach($this->chambres as $hotel){
             echo $hotel;
-
         }
     }
 
@@ -94,24 +92,7 @@ class Hotel{
             echo " Aucune réservation ";
         }
 
-     
-        
-    
     }
-
-    // FIXME: calculate the total price with the reservations and the dates
-    // public function prix(){
-    //     $total= 0;
-            
-
-    //     foreach($this->reservations as $reservation){
-    //         $total +=$hotel->get_prix_chambre();
-    //     }
-
-    //     echo "Le prix total est de : " .$total. " €</br>";
-    // }
-
-
 
     
     // tostring function
