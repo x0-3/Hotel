@@ -9,22 +9,13 @@ include 'Reservation.php';
 $hotel1= new Hotel("Hilton", "Strasbourg", "10 route de la Gare", "67000 STRASSBOURG");
 $client1= new Client("MACHIN", "Mark");
 $chambre1= new Chambre(1, "135 €", true, true, $hotel1, $client1);
-$reservation1= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
+$chambre2= new Chambre(2, "135 €", false, false, $hotel1, $client1);
 
-$client2= new Client("MACHIN", "pierre");
+$reservation1= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
 
 $hotel2= new Hotel("Regent", "Paris", "10 route de la Gare", "Paris");
 
-$chambre2= new Chambre(2, "135 €", false, true, $hotel1, $client1);
-$chambre3= new Chambre(3, "245 €", false, false, $hotel1, $client1);
-$chambre4= new Chambre(4, "369 €", false, false, $hotel1, $client1);
-$chambre5= new Chambre(5, "142 €", true, true, $hotel1, $client2);
-$chambre6= new Chambre(6, "432 €", false, false, $hotel1, $client1);
-
-$reservation2= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre2, $client1);
-$reservation3= new Reservation("01-01-01-2021", "03-01-2021", $hotel1, $chambre5, $client2);
-
-$chambres = array($chambre1, $chambre2, $chambre3, $chambre4, $chambre5, $chambre6);
+$chambres = array($chambre1, $chambre2);
 
 ?>
 
@@ -46,7 +37,10 @@ $chambres = array($chambre1, $chambre2, $chambre3, $chambre4, $chambre5, $chambr
     // infos on a hotel (Hilton)
     echo "<h3>" . $hotel1->get_nom_hotel() . " **** " . $hotel1->get_ville_hotel() . "</h3>",
     "<p>" . $hotel1->get_adresse() . " " . $hotel1->get_code_postal() . "</p>";
-    "<p>" . $hotel1->nombre_reservation() ."</p>";
+    "<p>" . $hotel1->nombre_reservations() ."</p>";
+
+
+
 
 
     // booking for a specific hotel (Hilton)
@@ -55,17 +49,12 @@ $chambres = array($chambre1, $chambre2, $chambre3, $chambre4, $chambre5, $chambr
 
     // infos for hotel Regent Paris
     echo "<h4>" . $hotel2->get_nom_hotel() . " **** " . $hotel2->get_ville_hotel() . "</h4>";
-    "<p>" . $hotel2->nombre_reservation() ."</p>";
+    "<p>" . $hotel2->nombre_reservations() ."</p>";
 
 
     // booking for MACHIN Mark
     echo "<h4 class='uk-margin-large-top'> Réservation de " . $client1 . "</h4>",
     $client1 -> afficherReservations() ."</br>";
-
-    // booking for MACHIN Pierre
-    echo "<h4 class='uk-margin-large-top'> Réservation de " . $client2 . "</h4>",
-    $client2 -> afficherReservations() ."</br>";
-
 
     // status info of the hotel rooms in the hotel Hitlon in a table
     echo "<h4 class='uk-margin-large-top'>Statuts des chambres de <b class='uk-text-secondary'>" . $hotel1->get_nom_hotel() . " **** " . $hotel1->get_ville_hotel() . "</b></h4>";

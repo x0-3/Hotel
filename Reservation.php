@@ -15,6 +15,7 @@ class Reservation{
         $this->date_debut_reservation= $date_debut_reservation;
         $this->date_fin_reservation= $date_fin_reservation;
         $this->hotel= $hotel;
+        $hotel->addReservations($this);
         $this->chambre= $chambre;
         $chambre->addReservations($this);
         $this->client= $client;

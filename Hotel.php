@@ -50,6 +50,20 @@ class Hotel{
     }
 
 
+     
+    //add $resevation in an array
+    public function addReservations(Reservation $reservation){
+        $this->reservations[] = $reservation;
+    }
+    // show the hotel reservation with a forEach
+    public function afficherReservations(){
+       foreach($this->reservations as $reservation){
+           echo $reservation;
+        }
+    }
+
+
+
     //add $hotel in an array
     public function addChambres(Chambre $hotel){
          $this->chambres[] = $hotel;
@@ -60,47 +74,46 @@ class Hotel{
         foreach($this->chambres as $hotel){
             echo $hotel;
 
-            $total= 0;
-            
-            // FIXME: calculate the total price with the reservations and the dates
-            foreach($this->reservations as $reservation){
-                $total +=$hotel->get_prix_chambre();
-            }
-
-            echo "Le prix total est de : " .$total. " €<br>";
-            // var_dump($total);
         }
     }
 
-    // FIXME: calculate number of reservation
-    // function number of room in Hotel
-    public function nombre_reservation(){
+    // calculate number of reservation, number of rooms
+    public function nombre_reservations(){
 
-        // $nbChambres = 30;
         $nbChambres= count($this->chambres);
+
+        $nbChambreReservees = count($this->reservations);
+        $nbChambreDispos = 0;
         
         if (count($this->chambres) != 0){
-            $nbChambres -= count($this->reservations);
             echo "Nombre de chambres : " . $nbChambres . "</br>";
-            echo "Nombre de chambres réservées : " . count($this->reservations) . "</br>";
-            echo "Nombre de chambres dispo : " . $nbChambres . "</br>"; 
+            echo "Nombre de chambres réservées : " .$nbChambreReservees  . "</br>";
+            $nbChambreDispos = $nbChambres - $nbChambreReservees;
+            echo "Nombre de chambres dispo : " . $nbChambreDispos . "</br>"; 
         }else{
             echo " Aucune réservation ";
         }
+
+     
+        
     
     }
 
-    // public function PrixTotal(){
+    // FIXME: calculate the total price with the reservations and the dates
+    // public function prix(){
     //     $total= 0;
+            
 
     //     foreach($this->reservations as $reservation){
-    //         $total +=$chambres->get_prix_chambre();
+    //         $total +=$hotel->get_prix_chambre();
     //     }
-    //     echo "Le prix total est de : " .$total. " €<br>";
-        
-    // }
-    
 
+    //     echo "Le prix total est de : " .$total. " €</br>";
+    // }
+
+
+
+    
     // tostring function
     public function __toString()
     {
