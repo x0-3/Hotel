@@ -91,7 +91,6 @@ class Hotel{
         }else{
             echo " Aucune réservation ";
         }
-
     }
 
     

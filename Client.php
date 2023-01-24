@@ -44,16 +44,26 @@ class Client{
 
     }    
 
+        // calculate the number of days stayed for a reservation
+        public function nb_jour(){
+            foreach($this-> reservations as $date){
+                $nb_jour_debut= new DateTime($date-> get_date_debut());
+                $nb_jour_fin= new DateTime($date-> get_date_fin_reservation());
+                $diff= $nb_jour_debut->diff($nb_jour_fin)-> format("%d");                
+            }
+            
+            echo "Le client est rester : ".$diff. " jours </br>";
+        }   
 
-    // public function prixTotalReservation(){
-    //     $total= 0;
+    public function prixTotalReservation(){
+        $total= 0;
 
-    //     foreach($this->reservations as $prix){
-    //         $total+=$prix->prix_chambre();
-    //     }
-    //     return "Le prix total est de : " .$total. " €<br>";
+        foreach($this->reservations as $prix){
+            $total+= $prix->get_chambre();
+        }
+        echo "Le total : " .$total. " €<br>";
         
-    // }
+    }
 
     // tostring function
     public function __toString()

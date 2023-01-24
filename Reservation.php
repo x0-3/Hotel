@@ -56,13 +56,7 @@ class Reservation{
         return $this->client;
     }
 
-    // calculate the number of days stayed for a reservation
-    public function nb_jour(){
-        $nb_jour_debut= new DateTime($this-> get_date_debut());
-        $nb_jour_fin= new DateTime($this-> get_date_fin_reservation());
-        $diff= $nb_jour_debut->diff($nb_jour_fin)-> format("%d jours");
-        echo $diff;
-    }   
+
 
     // toString function
     public function __toString()

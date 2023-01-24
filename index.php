@@ -41,21 +41,24 @@ $chambres = array($chambre1, $chambre2);
 
 
 
-
-
     // booking for a specific hotel (Hilton)
     echo "<h4> Réservations de l'hôtel " . $hotel1->get_nom_hotel() . " **** " . $hotel1->get_ville_hotel() . "</h4>",
     "<p>" . $reservation1 . "</p>";
+
+
 
     // infos for hotel Regent Paris
     echo "<h4>" . $hotel2->get_nom_hotel() . " **** " . $hotel2->get_ville_hotel() . "</h4>";
     "<p>" . $hotel2->nombre_reservations() ."</p>";
 
 
+
     // booking for MACHIN Mark
     echo "<h4 class='uk-margin-large-top'> Réservation de " . $client1 . "</h4>",
     $client1 -> afficherReservations() ."</br>";
-    var_dump($reservation1->nb_jour()); //remove it when total price works
+    $client1 -> nb_jour() ."</br>";
+    $client1 ->prixTotalReservation();
+
 
 
     // status info of the hotel rooms in the hotel Hitlon in a table
