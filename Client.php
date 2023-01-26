@@ -44,25 +44,28 @@ class Client{
 
     }    
 
-        // calculate the number of days stayed for a reservation
-        public function nb_jour(){
-            foreach($this-> reservations as $date){
-                $nb_jour_debut= new DateTime($date-> get_date_debut());
-                $nb_jour_fin= new DateTime($date-> get_date_fin_reservation());
-                $diff= $nb_jour_debut->diff($nb_jour_fin)-> format("%d");                
-            }
-            
-            echo "Le client est rester : ".$diff. " jours </br>";
-        }   
+    // calculate the number of days stayed for a reservation
 
-    public function prixTotalReservation(){
-        $total= 0;
+    public function nb_jour(){
+        foreach($this-> reservations as $date){
+            $nb_jour_debut= new DateTime($date-> get_date_debut());
+            $nb_jour_fin= new DateTime($date-> get_date_fin_reservation());
+            $diff= $nb_jour_debut->diff($nb_jour_fin)-> format("%d");                
+        }
+            
+        echo "Le client est rester : ".$diff. " jours </br>";
+
+        // calculate the total of the reservation 
+        $total=0;
 
         foreach($this->reservations as $prix){
-            $total= $prix->get_prix_chambre();
+            $total= $prix->get_chambre()->get_prix_chambre() * $diff; 
         }
-        echo "Le total : " .$total. " €<br>";
-    }
+
+        echo "Le total : " .$total. " €<br>";  
+
+    }   
+
 
     // tostring function
     public function __toString()

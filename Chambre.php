@@ -46,7 +46,6 @@ class Chambre{
     public function get_prix_chambre(){
         return $this->prix_chambre;
     }
-    
     // see if a room has wifi 
     public function get_wifi(){
         if ($this->wifi == true){    
@@ -56,7 +55,6 @@ class Chambre{
         }
         return $this->wifi;
     }
-
     // see if a room is occupied
     public function get_etat_chambre(){
         if ($this->etat_chambre == true){

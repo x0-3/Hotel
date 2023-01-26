@@ -9,7 +9,8 @@ include 'Reservation.php';
 $hotel1= new Hotel("Hilton", "Strasbourg", "10 route de la Gare", "67000 STRASSBOURG");
 $client1= new Client("MACHIN", "Mark");
 $chambre1= new Chambre(1, "135 €", true, true, $hotel1, $client1);
-$chambre2= new Chambre(2, "135 €", false, false, $hotel1, $client1);
+
+$chambre2= new Chambre(2, "135 €", false, false, $hotel1,$client1);
 
 $reservation1= new Reservation("01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
 
@@ -57,7 +58,6 @@ $chambres = array($chambre1, $chambre2);
     echo "<h4 class='uk-margin-large-top'> Réservation de " . $client1 . "</h4>",
     $client1 -> afficherReservations() ."</br>";
     $client1 -> nb_jour() ."</br>";
-    $client1 ->prixTotalReservation();
 
 
 
