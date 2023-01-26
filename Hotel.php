@@ -21,6 +21,7 @@ class Hotel{
         $this->reservations = [];
     }
 
+    
     // setter functions
     public function set_nom_hotel(){
        $this->nom_hotel;
@@ -49,8 +50,7 @@ class Hotel{
         return $this->code_postal;
     }
 
-
-     
+ 
     //add $resevation in an array
     public function addReservations(Reservation $reservation){
         $this->reservations[] = $reservation;
@@ -74,6 +74,7 @@ class Hotel{
             echo $hotel;
         }
     }
+
 
     // calculate number of reservation, number of rooms
     public function nombre_reservations(){

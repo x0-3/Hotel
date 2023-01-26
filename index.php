@@ -14,6 +14,8 @@ $chambre2= new Chambre(2, "135 €", false, false, $hotel1,$client1);
 
 $reservation1= new Reservation("01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
 
+$reservation2= new Reservation("01-01-2021", "03-01-2021", $hotel1, $chambre1, $client1);
+
 $hotel2= new Hotel("Regent", "Paris", "10 route de la Gare", "Paris");
 
 $chambres = array($chambre1, $chambre2);
@@ -57,9 +59,12 @@ $chambres = array($chambre1, $chambre2);
     // booking for MACHIN Mark
     echo "<h4 class='uk-margin-large-top'> Réservation de " . $client1 . "</h4>",
     $client1 -> afficherReservations() ."</br>";
-    $client1 -> nb_jour() ."</br>";
+    
 
 
+    
+    $client1->nb_jour();
+   
 
     // status info of the hotel rooms in the hotel Hitlon in a table
     echo "<h4 class='uk-margin-large-top'>Statuts des chambres de <b class='uk-text-secondary'>" . $hotel1->get_nom_hotel() . " **** " . $hotel1->get_ville_hotel() . "</b></h4>";

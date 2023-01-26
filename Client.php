@@ -31,6 +31,7 @@ class Client{
         return $this->prenom;
     }
 
+    
     //add $resevation in an array
     public function addReservations(Reservation $reservation){
         $this->reservations[] = $reservation;
@@ -44,25 +45,31 @@ class Client{
 
     }    
 
-    // calculate the number of days stayed for a reservation
 
+    // calculate the number of days stayed for a reservation
     public function nb_jour(){
+        $total = 0;
         foreach($this-> reservations as $date){
-            $nb_jour_debut= new DateTime($date-> get_date_debut());
-            $nb_jour_fin= new DateTime($date-> get_date_fin_reservation());
-            $diff= $nb_jour_debut->diff($nb_jour_fin)-> format("%d");                
+           
+            $total += $date->nb_jour() * $date->get_chambre()->get_prix_chambre();
+
         }
-            
-        echo "Le client est rester : ".$diff. " jours </br>";
+        
+        echo $total;
+        // echo "Le client est rester : ".$diff. " jours </br>";
+     
+         
 
         // calculate the total of the reservation 
-        $total=0;
+        // $total=0;
 
-        foreach($this->reservations as $prix){
-            $total= $prix->get_chambre()->get_prix_chambre() * $diff; 
-        }
+        // foreach($this->reservations as $prix){
+        //     $total= $prix->get_chambre()->get_prix_chambre() * $diff; 
+        // }
 
-        echo "Le total : " .$total. " €<br>";  
+        // echo "Le total : " .$total. " €<br>";  
+
+        // var_dump($total);
 
     }   
 

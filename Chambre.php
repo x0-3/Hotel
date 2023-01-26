@@ -22,6 +22,7 @@ class Chambre{
         $this->reservations = [];
        
     }
+    
 
     // setter functions
     public function set_numero_chambre(){
@@ -42,7 +43,6 @@ class Chambre{
     public function get_numero_chambre(){
        return $this->numero_chambre;
     }
-
     public function get_prix_chambre(){
         return $this->prix_chambre;
     }
