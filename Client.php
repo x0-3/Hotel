@@ -47,30 +47,13 @@ class Client{
 
 
     // calculate the number of days stayed for a reservation
-    public function nb_jour(){
+    public function prixTotal(){
         $total = 0;
         foreach($this-> reservations as $date){
-           
             $total += $date->nb_jour() * $date->get_chambre()->get_prix_chambre();
-
         }
         
-        echo $total;
-        // echo "Le client est rester : ".$diff. " jours </br>";
-     
-         
-
-        // calculate the total of the reservation 
-        // $total=0;
-
-        // foreach($this->reservations as $prix){
-        //     $total= $prix->get_chambre()->get_prix_chambre() * $diff; 
-        // }
-
-        // echo "Le total : " .$total. " €<br>";  
-
-        // var_dump($total);
-
+        echo "Total : " .$total. " €";
     }   
 
 

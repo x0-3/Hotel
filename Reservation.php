@@ -5,17 +5,16 @@ class Reservation{
     // attribute
     private DateTime $date_debut_reservation;
     private DateTime $date_fin_reservation;
-    private Hotel $hotel;
+    private $hotel;
     private Chambre $chambre;
     private Client $client;
-    private int $nbJour; 
 
     // construct methode
-    public function __construct( $date_debut_reservation,  $date_fin_reservation, Hotel $hotel, Chambre $chambre, Client $client)
+    public function __construct( $date_debut_reservation,  $date_fin_reservation, $hotel, Chambre $chambre, Client $client)
     {
         $this->date_debut_reservation= new DateTime($date_debut_reservation);
         $this->date_fin_reservation= new DateTime($date_fin_reservation); 
-        $this->hotel= $hotel;
+        $this->hotel= $chambre->getHotel();
         $hotel->addReservations($this);
         $this->chambre= $chambre;
         $chambre->addReservations($this);
@@ -62,12 +61,12 @@ class Reservation{
 
     public function nb_jour(){
         
-            $nb_jour_debut=$this->date_debut_reservation;
-            $nb_jour_fin= $this->date_fin_reservation;
-            $diff= $nb_jour_debut->diff($nb_jour_fin)->format("%d"); 
+        $nb_jour_debut=$this->date_debut_reservation;
+        $nb_jour_fin= $this->date_fin_reservation;
+        $diff= $nb_jour_debut->diff($nb_jour_fin)->format("%d"); 
 
-            return $diff;
-        }
+        return intval($diff);
+    }
 
     // toString function
     public function __toString()

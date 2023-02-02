@@ -37,6 +37,13 @@ class Chambre{
     public function set_etat_chambre(){
        $this->etat_chambre;
     }
+    
+    public function setHotel($hotel)
+    {
+        $this->hotel = $hotel;
+
+        return $this;
+    }
 
 
     // getter functions
@@ -45,6 +52,10 @@ class Chambre{
     }
     public function get_prix_chambre(){
         return $this->prix_chambre;
+    }
+    public function getHotel()
+    {
+        return $this->hotel;
     }
     // see if a room has wifi 
     public function get_wifi(){
@@ -64,6 +75,7 @@ class Chambre{
         }
         return $this->etat_chambre;
     }
+
 
  
     //add $resevation in an array
