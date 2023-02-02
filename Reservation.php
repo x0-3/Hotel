@@ -5,9 +5,9 @@ class Reservation{
     // attribute
     private DateTime $date_debut_reservation;
     private DateTime $date_fin_reservation;
-    private $hotel;
     private Chambre $chambre;
     private Client $client;
+    private $hotel;
 
     // construct methode
     public function __construct( $date_debut_reservation,  $date_fin_reservation, $hotel, Chambre $chambre, Client $client)

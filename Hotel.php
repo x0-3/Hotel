@@ -90,7 +90,7 @@ class Hotel{
             $nbChambreDispos = $nbChambres - $nbChambreReservees;
             echo "Nombre de chambres dispo : " . $nbChambreDispos . "</br>"; 
         }else{
-            echo " Aucune réservation ";
+            echo " Aucune réservation !!!!!";
         }
     }
 
